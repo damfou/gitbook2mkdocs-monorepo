@@ -1,0 +1,22 @@
+site_name: my-site
+
+nav:
+  - Mkdocs home:
+    - 1st page: index.md
+    - 2nd page: mkdocs_page.md
+  - GitBook home: '!include ./gitbook/mkdocs.yaml'
+
+not_in_nav:  # to exclude from warning about not in nav
+  SUMMARY.md
+
+hooks:
+  - gitbook2mkdocs.py  # to render GitBook pages in Mkdocs
+
+plugins:
+  - monorepo
+
+# !.gitbook: needed to remove "image excluded from the built site" warning when using monorepo plugin
+# SUMMARY.md: needed to remove GitBook navigation pages
+exclude_docs: |
+  !.gitbook
+  SUMMARY.md

@@ -1,0 +1,5 @@
+site_name: gitbook-site
+
+nav:
+  - GitBook home: README.md
+  - GitBook sample page: gitbook-page.md
